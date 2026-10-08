@@ -33,4 +33,10 @@ quarto publish gh-pages
 git add commands.txt
 git commit -m "Add command log"
 git push
-
+open -a TextEdit _quarto.yml
+quarto render
+quarto publish gh-pages
+git add .
+git commit -m "Add custom styling and light dark themes"
+git push
+git status
