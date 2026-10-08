@@ -1,0 +1,34 @@
+
+---
+title: "The Bond Films"
+---
+
+## James Bond Films and Box Office Revenue
+
+This page looks at how worldwide box-office revenue has changed across James Bond films. @fig-bond-revenue shows the revenue of James Bond films over time.
+
+```{python}
+#| label: fig-bond-revenue
+#| fig-cap: "Worldwide box-office revenue of James Bond films over time"
+#| echo: true
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+films = pd.read_csv("films.csv")
+
+bond = films[films["franchise"] == "James Bond"]
+bond = bond.sort_values("year")
+
+plt.plot(bond["year"], bond["revenue_musd"], marker="o")
+
+plt.xlabel("Release Year")
+plt.ylabel("Worldwide Revenue (millions USD)")
+plt.title("James Bond Film Revenue Over Time")
+
+plt.show()
+```
+
+## James Bond Release Years
+
+The first James Bond film in this dataset was released in `{python} int(bond["year"].min())`, and the last was released in `{python} int(bond["year"].max())`.

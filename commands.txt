@@ -1,0 +1,28 @@
+gh repo fork danilofreire/datasci350-quiz02 --clone
+git clone https://github.com/meghanasivabalan/datasci350-quiz02.git
+cd datasci350-quiz02
+pwd
+ls -a
+git status
+quarto create project website .
+ls -a
+open -a TextEdit .gitignore
+git add .gitignore
+git commit -m "Add gitignore"
+open -a TextEdit _quarto.yml
+rm about.qmd
+touch budget-revenue.qmd runtime-rating.qmd bond.qmd
+cat _quarto.yml
+open -a TextEdit index.qmd
+cat index.qmd
+open -a TextEdit budget-revenue.qmd
+cat budget-revenue.qmd
+open -a TextEdit runtime-rating.qmd
+cat runtime-rating.qmd
+open -a TextEdit bond.qmd
+cat bond.qmd
+pwd
+quarto render
+ls -a
+git status
+git check-ignore _site/
